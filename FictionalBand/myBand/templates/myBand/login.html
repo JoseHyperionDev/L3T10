@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .login-container {
+    text-align: center;
+    margin: 100px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #ff4500;
+}
+
+.signup-link {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    color: #ff4500;
+}
+    </style>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>User Login</h2>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p class="signup-link">
+            Don't have an account? <a href="{% url 'registration' %}">Sign Up</a>
+        </p>
+    </div>
+</body>
+</html>

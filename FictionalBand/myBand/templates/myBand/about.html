@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .about-container {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
+header {
+    background-color: #000;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.about {
+    padding: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}   
+    </style>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'album_list' %}">Albums</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-container">
+            <h1>About Us</h1>
+            <section class="about">
+                <p>Welcome to our website! We are dedicated to sharing the best music with our audience.</p>
+                <p>Learn more about our team and our mission below.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} WhereWeGoing</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
